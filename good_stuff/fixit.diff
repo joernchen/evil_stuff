@@ -1,0 +1,15 @@
+--- /usr/share/X11/xkb/compat/xfree86.bak	2012-01-20 11:57:58.741030886 +0100
++++ /usr/share/X11/xkb/compat/xfree86	2012-01-20 11:58:36.901030529 +0100
+@@ -41,12 +41,6 @@
+         action = SwitchScreen(Screen=12, !SameServer);
+     };
+ 
+-    interpret XF86_Ungrab {
+-        action = Private(type=0x86, data="Ungrab");
+-    };
+-    interpret XF86_ClearGrab {
+-        action = Private(type=0x86, data="ClsGrb");
+-    };
+     interpret XF86LogGrabInfo {
+         action = Private(type=0x86, data="PrGrbs");
+     };
