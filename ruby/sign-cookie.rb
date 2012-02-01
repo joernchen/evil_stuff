@@ -33,7 +33,7 @@ if key.nil?
 end
 
 
-cook = Base64.encode64(Marshal.dump(eval("#{cookie}"))).chomp
+cook = Base64.strict_encode64(Marshal.dump(eval("#{cookie}"))).chomp
 
 digest = OpenSSL::HMAC.hexdigest(OpenSSL::Digest::Digest.new(hashtype), key, cook)
 
