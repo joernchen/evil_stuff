@@ -4,8 +4,15 @@
 # should be run from rails console in production
 # environment.
 
+#make sure all models are loaded
+Dir[Rails.root + 'app/models/**/*.rb'].each { |path| require path }
 
-ActiveRecord::Base.subclasses.each do |m| 
+models = ActiveRecord::Base.subclasses
+## for mongoid:
+# ObjectSpace.each(Class).select { |c| c < Mongoid::Document }
+## (does not work in all rubies)
+
+models.each do |m| 
   mod = m.new
   puts "All attributes for model #{m}:"
   mod.attributes.each_key do |k|
