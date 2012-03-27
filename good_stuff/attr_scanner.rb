@@ -18,11 +18,11 @@ models.each do |m|
   mod.attributes.each_key do |k|
     puts "\t#{k}"
   end
-  puts "Protected attributes for model {#m}:"
+  puts "Protected attributes for model #{m}:"
   m.protected_attributes.each do |p|
     puts "\t#{p}"
   end
-  puts "Accessible attributes for model {#m}:"
+  puts "Accessible attributes for model #{m}:"
   m.accessible_attributes do |a|
     puts "\t#{a}"
   end
