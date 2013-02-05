@@ -1,0 +1,7 @@
+<svg onload="alert(document.domain)" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        version="1.1" baseProfile="full"
+        width="700px" height="400px" viewBox="0 0 700 400">
+    <text x="20" y="40">oha!</text>
+</svg>
